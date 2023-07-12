@@ -99,7 +99,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    
+
 }
 
 .address-toplinks{
@@ -140,7 +140,7 @@ body{
 
 .toplinks-current a::after {
 	content:"";
-	display:block; 
+	display:block;
 	border-bottom:solid var(--highlighting-color);
 	padding-top:.2em;
 }
@@ -254,7 +254,6 @@ body{
     pointer-events: none;
 }
 
-
 .modal{
     position: absolute;
     top: 50%;
@@ -264,7 +263,6 @@ body{
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms var(--cubic);
 }
@@ -281,8 +279,185 @@ body{
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    fill: var(--highlighting-color);
 }
 
+.close-modal-vector{
+    fill: black;
+}
+
+.close-modal:hover .close-modal-vector{
+    fill: var(--highlighting-color);
+}
+
+.form-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+    padding: 0;
+    width: 448px;
+    height: 501px;
+}
+
+.modal-tittle{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.form-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.form-label{
+    position: relative;
+    display: block;
+    margin-top: 10px;
+}
+
+.input-tittle{
+    color: var(--descriptive-text);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 0;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    text-align: left;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.input-icon{
+    position: absolute;
+    fill: black;
+    margin: 0 15px;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-43%);
+    z-index: 3;
+}
+
+.form-input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 40px;
+    outline: none;
+    z-index: 2;
+}
+
+.form-input:hover{
+    border: 1px solid var(--highlighting-color);
+    transition: border 250ms var(--cubic);
+    cursor: pointer;
+}
+
+.form-input:focus{
+    border: 1px solid var(--highlighting-color);
+    transition: border 250ms var(--cubic);
+    cursor: pointer;
+}
+
+.input-wrapper:hover .input-icon{
+    fill: #188CE8;
+}
+
+.input-comments{
+    width: 100%;
+    resize: none;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+}
+
+.input-comments:hover,
+.input-comments:focus{
+    border: 1px solid var(--highlighting-color);
+    transition: border 250ms var(--cubic);
+}
+
+.input-comments::placeholder{
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.checkbox-input{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 10px;
+    height: 1px;
+    /* margin: 5px; */
+}
+
+.checkbox-box{
+    position: absolute;
+    height: 15px;
+    width: 16px;
+    border: 2px solid black;
+    border-radius: 2px;
+    margin-top: 3px;
+    margin-left: 15px;
+    /* top: 50%;
+    left: 1px;
+    transform: translateY(-43%);
+    z-index: 3; */
+}
+
+.checkbox-icon{
+    position: absolute;
+    fill: white;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.checkbox-input:checked + .checkbox-box {
+    background-color: var(--highlighting-color);
+    border: 2px solid var(--highlighting-color);
+}
+
+.checkbox-text{
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--descriptive-text);
+    margin: 0 40px;
+}
+
+.modal-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.modal-button button{
+    background-color: var(--highlighting-color);
+    color: white;
+    border-style: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    width: 200px;
+    height: 50px;
+}
+
+.modal-button button:hover{
+        background-color: #188CE8;
+        transition: background-color 250ms var(--cubic);
+}
 
 /* ---------------- */
 /* ---- index ---- */
@@ -302,7 +477,7 @@ body{
 .howwedoit{
     display: flex;
     margin-top: 94px;
-    margin-bottom: 94px;
+    /* margin-bottom: 94px; */
     padding-left: 5%;
     padding-right: 5%;
 
@@ -389,8 +564,8 @@ body{
 
 .whoweare{
     background: #F5F4FA;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 52px;
+    padding-bottom: 94px;
 }
 
 .whoweare-img-container{
@@ -460,14 +635,14 @@ body{
     fill: white;
     transition: background 250ms var(--cubic);
     transition: fill 250ms var(--cubic);
-    
+
 }
 
 .whoweare-icon-container:focus{
     background: var(--highlighting-color);
     fill: white;
     transition: background 250ms var(--cubic);
-    transition: fill 250ms var(--cubic);    
+    transition: fill 250ms var(--cubic);
 }
 
 
@@ -475,8 +650,8 @@ body{
 /* -------------------- */
 
 .clients{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 52px;
+    padding-bottom: 94px;
 }
 
 .clients-list{
@@ -545,7 +720,7 @@ body{
     justify-content: center;
     align-items: center;
     margin: 2px;
-    
+
     background: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
     height: 44px;
@@ -710,7 +885,7 @@ body{
     transform: translateY(0%);
 }
 
-.portfolio-card-item:hover .portfolio-container-overlay{   
+.portfolio-card-item:hover .portfolio-container-overlay{
     transform: translateY(-100%);
     transition: transform 250ms var(--cubic);
 }
