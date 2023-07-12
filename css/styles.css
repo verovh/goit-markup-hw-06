@@ -807,8 +807,8 @@ body{
 }
 
 .newsletter-button button:hover{
-        background-color: var(--highlighting-color);
-        transition: background-color 250ms var(--cubic);
+    background-color: #188CE8;
+    transition: background-color 250ms var(--cubic);
 }
 
 .newsletter-button{
